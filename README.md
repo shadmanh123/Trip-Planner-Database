@@ -1,4 +1,4 @@
-Our final project contained a list of countries and corresponding cities that allows
+This database contained a list of countries and corresponding cities that allows
 users to create schedules for when and where they want to go travel. It gave them a
 list of attractions and the currency used in each country to properly plan their trip.
 Users were also provided with a schedule sheet which they could add cities they
@@ -9,9 +9,11 @@ countries where they feel the most comfortable (based on the risk severity), pla
 they’ll get the most value (based on the exchange rate) and how they would like to
 live and travel (based on accommodation for travel and living).
 
-Our database was made only for Canadian citizens. Therefore the exchange rates,
+The database was made only for Canadian citizens. Therefore the exchange rates,
 Visa requirements, and risk severity for other countries were determined using the
 Canadian government website.
+
+
 List of queries used:
 • Insert city into schedule (insertion query)
 • Insert a new schedule (insertion query)
