@@ -1,0 +1,181 @@
+<form action="CreateUserQuery.php" method="post">
+<label>Enter the UserID you want</label>
+<input name="uid" type="text" placeholder="Type
+Here">
+<br>
+<label>Enter your first name</label>
+<input name="fname" type="text" placeholder="Type
+Here">
+<br>
+<label>Enter your last name</label>
+<input name="lname" type="text" placeholder="Type
+Here">
+<br>
+<input type="submit" value="Create User">
+</form>
+
+<br><br>
+
+<form action="DeleteUserQuery.php" method="post">
+<label>Enter the UserID you would like to delete</label>
+<input name="uid" type="text" placeholder="Type
+Here">
+<br>
+<input type="submit" value="Delete UserID">
+</form>
+
+<br><br>
+
+<form action="UpdateUserQuery.php" method="post">
+<label>Enter your current UserID</label>
+<input name="uid" type="text" placeholder="Type
+Here">
+<br>
+<label>Enter your new First Name</label>
+<input name="fname" type="text" placeholder="Type
+Here">
+<br>
+<label>Enter your new Last Name</label>
+<input name="lname" type="text" placeholder="Type
+Here">
+<br>
+<input type="submit" value="Update Information">
+</form>
+
+<br><br>
+
+<form action="CreateScheduleQuery.php" method="post">
+<label>Enter your userID</label>
+<input name="uid" type="text" placeholder="Type
+Here">
+<br>
+<label>Enter a ScheduleID for your new schedule</label>
+<input name="sid" type="text" placeholder="Type
+Here">
+<br>
+<label>Enter your schedule start date</label>
+<input name="start" type="date" min="2022-08-01" max="2023-08-01">
+<br>
+<label>Enter your schedule end date</label>
+<input name="end" type="date" min="2022-08-02" max="2023-08-01">
+<br>
+<input type="submit" value="Create a Schedule">
+</form>
+
+<br><br>
+
+<form action="AddToScheduleQuery.php" method="post">
+<label>Enter the schedule ID you want to insert a city into</label>
+<input name="sid" type="text" placeholder="Type
+Here">
+<br>
+<label>Enter the city you want to add to this schedule</label>
+<input name="city" type="text" placeholder="Type
+Here">
+<br>
+<input type="submit" value="Add city">
+</form>
+
+<br><br>
+
+<form action="ViewScheduleQuery.php" method="post">
+<label>Enter the schedule ID you want to view</label>
+<input name="sid" type="text" placeholder="Type
+Here">
+<br>
+<input type="submit" value="View Schedule">
+</form>
+
+<br><br>
+
+<form action="SelectionQuery.php" method="post">
+<label>Enter the name of the columns you want to see</label>
+<input name="column" type="text" placeholder="Ex. CurrencyNameY">
+<br>
+<label>Enter the table you want to see these columns from</label>
+<input name="table" type="text" placeholder="Ex. ExchangeRate">
+<br>
+<label>Enter the column you want to compare by</label>
+<input name="column2" type="text" placeholder="Ex. exchangerate">
+<br>
+<input type="submit" value="Show Selection">
+</form>
+
+<br><br>
+
+<form action="ProjectionQuery.php" method="post">
+<label>Enter the name of the columns you want to see</label>
+<input name="column" type="text" placeholder="Ex. CountryName">
+<br>
+<label>Enter the table you want to see these columns from</label>
+<input name="table" type="text" placeholder="Ex. Country">
+<br>
+<input type="submit" value="Show Projection">
+</form>
+
+<br><br>
+
+
+
+<form action="JoinQuery.php" method="post">
+<label>Enter the name of the first table you want to join</label>
+<input name="t1" type="text" placeholder="Ex. CountryHasARegion">
+<br>
+<label>Enter the name of the second table you want to join</label>
+<input name="t2" type="text" placeholder="Ex. city_hasa">
+<br>
+<label>Enter the name of the third table you want to join</label>
+<input name="t3" type="text" placeholder="Ex. attraction_hasa_event1">
+<br>
+<label>Enter the name of the first column</label>
+<input name="column1" type="text" placeholder="Ex. CountryName">
+<br>
+<label>Enter the name of the second column</label>
+<input name="column2" type="text" placeholder="Ex. RegionName">
+<br>
+<label>Enter the name of the third column</label>
+<input name="column3" type="text" placeholder="Ex. CityName">
+<br>
+<label>Enter the name of the fourth column</label>
+<input name="column4" type="text" placeholder="Ex. AttractionName">
+<br>
+
+<input type="submit" value="Show Join">
+</form>
+
+
+
+<br><br>
+
+<form action="AggregationQuery.php" method="post">
+<label>Click the button to see the country that will give you the lowest exchange rate</label>
+<br>
+<input type="submit" value="Show Aggregation">
+</form>
+
+<br><br>
+
+<form action="NestedAggregationQuery.php" method="post">
+<label>Click the button to see the number of travel risks and average risk level</label>
+<br>
+<input type="submit" value="Show Nested Aggregation">
+</form>
+
+<br><br>
+
+
+<form action="DivisionQuery.php" method="post">
+<label>Enter the name of the table you want to filter</label>
+<input name="t1" type="text" placeholder="Ex. Uses">
+<br>
+<label>Enter the name of the first column</label>
+<input name="c1" type="text" placeholder="Ex. CountryName">
+<br>
+<label>Enter the name of the second column</label>
+<input name="c2" type="text" placeholder="Ex. CurrencyName">
+<br>
+<label>Enter what you want to filter by</label>
+<input name="f1" type="text" placeholder="Ex. Euro">
+<br>
+<input type="submit" value="Show Division">
+</form>
