@@ -1,33 +1,77 @@
-This database contained a list of countries and corresponding cities that allows
-users to create schedules for when and where they want to go travel. It gave them a
-list of attractions and the currency used in each country to properly plan their trip.
-Users were also provided with a schedule sheet which they could add cities they
-wanted to visit. Accommodations for both transportation and living were supplied
-to the users so they know what to expect when they arrive at their destination.
-Overall, for individuals or groups wanting to plan their trips, they can select
-countries where they feel the most comfortable (based on the risk severity), places
-they’ll get the most value (based on the exchange rate) and how they would like to
-live and travel (based on accommodation for travel and living).
+# Trip Planner Database
 
-The database was made only for Canadian citizens. Therefore the exchange rates,
-Visa requirements, and risk severity for other countries were determined using the
-Canadian government website.
+Trip planning database with PHP query endpoints and a sample data set. The schema
+models countries, cities, attractions, currency, exchange rates, travel risks,
+transportation, accommodations, and user schedules. The UI is a simple HTML form
+that posts to PHP scripts for common queries.
 
+The data set was curated for Canadian travelers, so visa requirements, exchange
+rates, and risk severity reflect Canadian government sources.
 
-List of queries used:
-• Insert city into schedule (insertion query)
-• Insert a new schedule (insertion query)
-• Insert a new client/user (insertion query)
-• Delete on cascade a client/user (deletes all schedules linked to client/user,
-deletion query)
-• Update client/user details (update query)
-• Filter Countries that have a specific currency (division query)
-• Joined Country, City and Attractions tables (join query)
-• Returned the country in which you get the highest exchange rate
-(aggregation query)
-• Returned the amount of risk types and average risk factor for all risk
-severities at a certain threshold (nested aggregation query)
-• Show list of all countries (projection query)
-• Show all countries and exchange rates that have a exchange rate less than 1
-(selection query)
-• Show user the schedule specified with all cities included (selection query
+## My Contributions
+
+In this project, I designed and implemented the relational database schema and wrote the SQL queries used to support travel planning and analysis.
+
+### Key contributions:
+
+- Designed the ER model and relational schema covering countries, cities, attractions, currency, and travel risk data
+- Normalized the database from 1NF to 3NF to reduce redundancy and ensure data integrity
+- Implemented complex SQL queries including joins, aggregation, nested aggregation, and division
+- Enforced referential integrity through primary and foreign key constraints
+- Developed PHP-backed query endpoints to execute and display results from the database
+
+## Technologies Used
+
+- MySQL
+- SQL (joins, aggregation, nested queries, division)
+- PHP (query endpoints)
+- HTML (simple UI)
+
+## Project layout
+
+- `HTML and PHP Code/` - PHP query scripts, `connect.php`, and `inputs.html` UI.
+- `SQL Tables and Data/` - SQL dump to create and seed the `zagi1` database.
+- `Screenshots.pdf` - sample UI outputs.
+
+## Database model (high level)
+
+Core tables include:
+
+- `country`, `region`, `countryhasaregion`, `city_hasa`
+- `currency`, `exchangerate`, `uses`
+- `accomodation`, `transportation1`, `modesof`, `provides1`, `provides2`
+- `client`, `creates_schedule`, `filledwith`
+- `mayhave_travelrisk`, `attraction_hasa_event1`, `attraction_hasa_event2`
+
+## Query endpoints
+
+The HTML form at `HTML and PHP Code/inputs.html` posts to these PHP scripts:
+
+- `CreateUserQuery.php` - create a client/user
+- `DeleteUserQuery.php` - delete a client/user
+- `UpdateUserQuery.php` - update client details
+- `CreateScheduleQuery.php` - create a schedule
+- `AddToScheduleQuery.php` - add a city to a schedule
+- `ViewScheduleQuery.php` - list cities in a schedule
+- `SelectionQuery.php` - selection query (filters exchange rates)
+- `ProjectionQuery.php` - projection query
+- `JoinQuery.php` - join country/region/city/attraction
+- `AggregationQuery.php` - highest exchange rate country
+- `NestedAggregationQuery.php` - risk counts and averages above threshold
+- `DivisionQuery.php` - filter by currency
+
+## Setup (local)
+
+1. Install a local PHP + MySQL stack (XAMPP recommended).
+2. Create a database named `zagi1`.
+3. Import `SQL Tables and Data/zagi1.sql` into `zagi1`.
+4. Update credentials in `HTML and PHP Code/connect.php` if needed.
+5. Copy `HTML and PHP Code/` into your web root (for XAMPP, `htdocs/trip-planner`).
+6. Open `http://localhost/trip-planner/inputs.html` and submit queries.
+
+## Notes
+
+- The PHP scripts are demo-focused and do not sanitize inputs. Use in a trusted
+  local environment only.
+- `HTML and PHP Code/index.php` is the default XAMPP dashboard redirect and is
+  not used by the trip planner UI.
